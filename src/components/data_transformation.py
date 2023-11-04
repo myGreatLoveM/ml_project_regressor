@@ -49,8 +49,7 @@ class DataTransformation:
                     ('scaler', StandardScaler())
                 ]
             )
-            logging.info(num_cols)
-            logging.info(cat_cols)
+
             preprocessor = ColumnTransformer(
                 transformers= [
                     ('num_pipeline', num_pipeline, num_cols),
@@ -86,9 +85,6 @@ class DataTransformation:
             target_feature_test_df = test_data_df[target_column_name]
 
             preprocessing_obj = self.get_data_transformation_object()
-
-            logging.info(list(input_features_train_df.columns))
-            logging.info(list(input_features_test_df.columns))
 
             logging.info('Applying preprocessing object on training and testing datasets ...') 
 
